@@ -197,21 +197,19 @@ Remember: You are an ancient goddess helping modern seekers find knowledge. Be m
     <>
       {/* Mobile backdrop overlay */}
       <div 
-        className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 sm:hidden animate-[fadeIn_0.2s_ease-out]"
+        className="fixed inset-0 bg-black/90 backdrop-blur-sm z-40 sm:hidden animate-[fadeIn_0.2s_ease-out]"
         onClick={onClose}
       />
       
-      <div className="fixed inset-x-4 bottom-4 sm:bottom-24 sm:right-8 sm:left-auto sm:w-96 h-[calc(100vh-8rem)] sm:h-[600px] glow-card flex flex-col z-50 shadow-2xl animate-[slideUp_0.3s_ease-out]">
-        <span className="glow"></span>
-      
-      <div className="inner flex flex-col h-full p-0">
+      <div className="fixed inset-x-4 bottom-4 sm:bottom-24 sm:right-8 sm:left-auto sm:w-96 h-[calc(100vh-8rem)] sm:h-[600px] bg-gradient-to-br from-[#1a1612] via-[#2a1f1a] to-[#1a1612] border border-[#D4A574]/30 rounded-lg flex flex-col z-50 shadow-2xl animate-[slideUp_0.3s_ease-out]">
+      <div className="flex flex-col h-full">
         {/* Header */}
         <div className="relative shrink-0">
-          <div className="h-1 -mx-6 -mt-6 bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-500"></div>
+          <div className="h-1 bg-gradient-to-r from-[#8B6914] via-[#D4A574] to-[#8B6914]"></div>
           
-          <div className="p-3 sm:p-4 border-b border-purple-200 flex items-center justify-between">
+          <div className="p-3 sm:p-4 border-b border-[#D4A574]/20 flex items-center justify-between">
             <div className="flex items-center gap-2 sm:gap-3">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black flex items-center justify-center shadow-lg overflow-hidden ring-2 ring-amber-500 shrink-0">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-br from-[#1a1612] to-black flex items-center justify-center shadow-lg overflow-hidden ring-2 ring-[#D4A574] shrink-0">
                 <img 
                   src={seshatImage} 
                   alt="Seshat" 
@@ -219,15 +217,15 @@ Remember: You are an ancient goddess helping modern seekers find knowledge. Be m
                 />
               </div>
               <div className="min-w-0">
-                <h3 className="text-gray-900 text-sm sm:text-base">Seshat</h3>
-                <p className="text-gray-600 text-xs sm:text-sm truncate">Mistress of the House of Books</p>
+                <h3 className="text-[#F5F5DC] text-sm sm:text-base" style={{ fontFamily: 'serif', fontWeight: 600 }}>Seshat</h3>
+                <p className="text-[#D4A574]/70 text-xs sm:text-sm truncate" style={{ fontFamily: 'serif' }}>Mistress of the House of Books</p>
               </div>
             </div>
             <button
               onClick={onClose}
-              className="p-2 hover:bg-purple-100 rounded-lg transition-colors shrink-0"
+              className="p-2 hover:bg-[#D4A574]/20 rounded-lg transition-colors shrink-0"
             >
-              <X size={20} className="text-gray-600" />
+              <X size={20} className="text-[#D4A574]" />
             </button>
           </div>
         </div>
@@ -240,23 +238,23 @@ Remember: You are an ancient goddess helping modern seekers find knowledge. Be m
               className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}
             >
               <div
-                className={`max-w-[85%] sm:max-w-[80%] rounded-2xl px-3 py-2 sm:px-4 sm:py-3 ${
+                className={`max-w-[85%] sm:max-w-[80%] rounded-lg px-3 py-2 sm:px-4 sm:py-3 ${
                   message.role === 'user'
-                    ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white'
-                    : 'bg-gradient-to-r from-amber-50 to-orange-50 text-gray-800 border border-amber-200'
+                    ? 'bg-gradient-to-r from-[#8B6914] to-[#D4A574] text-black'
+                    : 'bg-black/40 text-[#F5F5DC] border border-[#D4A574]/30'
                 }`}
               >
-                <p className="whitespace-pre-wrap text-sm sm:text-base">{message.content}</p>
+                <p className="whitespace-pre-wrap text-sm sm:text-base" style={{ fontFamily: 'serif' }}>{message.content}</p>
               </div>
             </div>
           ))}
           {isLoading && (
             <div className="flex justify-start">
-              <div className="bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 rounded-2xl px-4 py-3">
+              <div className="bg-black/40 border border-[#D4A574]/30 rounded-lg px-4 py-3">
                 <div className="flex gap-2">
-                  <div className="w-2 h-2 bg-amber-400 rounded-full animate-bounce"></div>
-                  <div className="w-2 h-2 bg-amber-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
-                  <div className="w-2 h-2 bg-amber-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+                  <div className="w-2 h-2 bg-[#D4A574] rounded-full animate-bounce"></div>
+                  <div className="w-2 h-2 bg-[#D4A574] rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
+                  <div className="w-2 h-2 bg-[#D4A574] rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
                 </div>
               </div>
             </div>
@@ -265,7 +263,7 @@ Remember: You are an ancient goddess helping modern seekers find knowledge. Be m
         </div>
 
         {/* Input */}
-        <div className="p-3 sm:p-4 border-t border-purple-200 shrink-0">
+        <div className="p-3 sm:p-4 border-t border-[#D4A574]/20 shrink-0">
           <div className="flex gap-2">
             <input
               type="text"
@@ -273,18 +271,19 @@ Remember: You are an ancient goddess helping modern seekers find knowledge. Be m
               onChange={(e) => setInput(e.target.value)}
               onKeyPress={handleKeyPress}
               placeholder="Ask Seshat..."
-              className="flex-1 px-3 py-2 sm:px-4 sm:py-3 rounded-xl border border-purple-200 focus:outline-none focus:ring-2 focus:ring-purple-500 bg-white/50 text-sm sm:text-base"
+              className="flex-1 px-3 py-2 sm:px-4 sm:py-3 rounded-lg border border-[#D4A574]/30 focus:outline-none focus:ring-2 focus:ring-[#D4A574]/50 bg-black/40 text-[#F5F5DC] placeholder-[#D4A574]/40 text-sm sm:text-base"
+              style={{ fontFamily: 'serif' }}
               disabled={isLoading}
             />
             <button
               onClick={handleSend}
               disabled={!input.trim() || isLoading}
-              className="px-3 py-2 sm:px-4 sm:py-3 bg-gradient-to-r from-amber-500 to-orange-500 text-white rounded-xl hover:from-amber-600 hover:to-orange-600 active:scale-95 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shrink-0"
+              className="px-3 py-2 sm:px-4 sm:py-3 bg-gradient-to-r from-[#8B6914] to-[#D4A574] hover:from-[#D4A574] hover:to-[#F4E4C1] text-black rounded-lg active:scale-95 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shrink-0"
             >
               <Send size={18} className="sm:w-5 sm:h-5" />
             </button>
           </div>
-          <p className="text-gray-500 text-xs sm:text-sm mt-2 text-center">
+          <p className="text-[#D4A574]/60 text-xs sm:text-sm mt-2 text-center" style={{ fontFamily: 'serif' }}>
             Powered by ancient wisdom ✨
           </p>
         </div>

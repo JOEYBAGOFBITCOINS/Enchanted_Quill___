@@ -16,29 +16,21 @@ export function Stats({ books }: StatsProps) {
       label: 'Total Titles',
       value: totalBooks.toString(),
       icon: BookOpen,
-      color: 'from-blue-500 to-cyan-500',
-      glowColor: 'rgba(59, 130, 246, 0.3)',
     },
     {
       label: 'Total Copies',
       value: totalQuantity.toString(),
       icon: Package,
-      color: 'from-green-500 to-emerald-500',
-      glowColor: 'rgba(34, 197, 94, 0.3)',
     },
     {
       label: 'Inventory Value',
       value: `$${totalValue.toFixed(2)}`,
       icon: DollarSign,
-      color: 'from-purple-500 to-pink-500',
-      glowColor: 'rgba(168, 85, 247, 0.3)',
     },
     {
       label: 'Avg. Price',
       value: `$${avgPrice.toFixed(2)}`,
       icon: TrendingUp,
-      color: 'from-orange-500 to-red-500',
-      glowColor: 'rgba(249, 115, 22, 0.3)',
     },
   ];
 
@@ -51,19 +43,18 @@ export function Stats({ books }: StatsProps) {
         >
           {/* Glow effect on hover */}
           <div 
-            className="absolute -inset-0.5 rounded-2xl opacity-0 group-hover:opacity-100 blur transition-all duration-300"
-            style={{ background: stat.glowColor }}
+            className="absolute -inset-0.5 rounded-lg opacity-0 group-hover:opacity-100 blur-lg bg-[#D4A574]/30 transition-all duration-300"
           ></div>
           
           {/* Card content */}
-          <div className="relative bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+          <div className="relative bg-gradient-to-br from-[#1a1612] via-[#2a1f1a] to-[#1a1612] border border-[#D4A574]/20 rounded-lg p-6 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
             <div className="flex items-center justify-between mb-4">
-              <div className={`p-3 rounded-xl bg-gradient-to-br ${stat.color} shadow-lg`}>
-                <stat.icon className="text-white" size={24} />
+              <div className="p-3 rounded-lg bg-gradient-to-br from-[#8B6914] to-[#D4A574] shadow-lg">
+                <stat.icon className="text-black" size={24} />
               </div>
             </div>
-            <p className="text-purple-200/80">{stat.label}</p>
-            <p className="text-white drop-shadow-lg">{stat.value}</p>
+            <p className="text-[#D4A574]/70 mb-1" style={{ fontFamily: 'serif', fontSize: '0.875rem' }}>{stat.label}</p>
+            <p className="text-[#F5F5DC]" style={{ fontFamily: 'serif', fontSize: '1.5rem', fontWeight: 700 }}>{stat.value}</p>
           </div>
         </div>
       ))}
