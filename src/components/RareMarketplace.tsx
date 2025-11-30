@@ -4,6 +4,7 @@ import { RareBook } from '../types/rare-book';
 import { rareBooks } from '../data/rare-books';
 import { RareBookCatalog } from './marketplace/RareBookCatalog';
 import { RareBookDetail } from './marketplace/RareBookDetail';
+import { RareBookLightbox } from './marketplace/RareBookLightbox';
 import { EscrowFeaturePage } from './marketplace/EscrowFeaturePage';
 import { PricingTable } from './marketplace/PricingTable';
 import { SalesFlowTimeline } from './marketplace/SalesFlowTimeline';
@@ -21,7 +22,9 @@ export default function RareMarketplace({ onBack }: RareMarketplaceProps) {
   const [purchasingBook, setPurchasingBook] = useState<RareBook | null>(null);
 
   const handleViewDetails = (book: RareBook) => {
+    console.log('🔍 View Details clicked for:', book.title);
     setSelectedBook(book);
+    console.log('📖 selectedBook state updated to:', book);
   };
 
   const handleCloseDetails = () => {
@@ -88,16 +91,14 @@ export default function RareMarketplace({ onBack }: RareMarketplaceProps) {
       {/* CTA Section */}
       <MarketplaceCTA />
 
-      {/* Book Detail Modal */}
-      <AnimatePresence>
-        {selectedBook && (
-          <RareBookDetail
-            book={selectedBook}
-            onClose={handleCloseDetails}
-            onPurchase={handlePurchase}
-          />
-        )}
-      </AnimatePresence>
+      {/* Book Detail Lightbox */}
+      {console.log('💡 Rendering lightbox check. selectedBook:', selectedBook?.title || 'null')}
+      {selectedBook && (
+        <RareBookLightbox
+          book={selectedBook}
+          onClose={handleCloseDetails}
+        />
+      )}
 
       {/* Purchase Modal */}
       <AnimatePresence>
