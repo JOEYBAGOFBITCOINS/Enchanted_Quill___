@@ -46,7 +46,7 @@ export function SplashScreen({ onComplete }: SplashScreenProps) {
   return (
     <AnimatePresence>
       <motion.div
-        className="fixed inset-0 z-[9999] overflow-hidden"
+        className="fixed inset-0 z-[9999] overflow-hidden bg-gradient-to-br from-[#1a1612] via-black to-[#0a0a0a]"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}

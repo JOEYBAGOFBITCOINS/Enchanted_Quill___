@@ -508,12 +508,12 @@ export default function App() {
           <RareMarketplace onBack={() => setCurrentView('inventory')} />
         ) : (
           <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-            {/* View Toggle */}
-            <div className="mb-6 flex justify-between items-center gap-4">
-              <div className="flex gap-3">
+            {/* View Toggle - Clean and spacious */}
+            <div className="mb-6 flex justify-center">
+              <div className="flex gap-4">
                 <button
                   onClick={() => setCurrentView('inventory')}
-                  className={`px-6 py-3 rounded-lg transition-all shadow-lg backdrop-blur-sm border flex items-center gap-2 ${
+                  className={`px-8 py-3 rounded-lg transition-all shadow-lg backdrop-blur-sm border flex items-center gap-2 ${
                     currentView === 'inventory'
                       ? 'bg-gradient-to-r from-[#8B6914] to-[#D4A574] text-black border-[#D4A574]'
                       : 'bg-black/40 text-[#D4A574]/80 border-[#D4A574]/20 hover:border-[#D4A574]/40'
@@ -525,7 +525,7 @@ export default function App() {
                 </button>
                 <button
                   onClick={() => setCurrentView('marketplace')}
-                  className={`px-6 py-3 rounded-lg transition-all shadow-lg backdrop-blur-sm border flex items-center gap-2 ${
+                  className={`px-8 py-3 rounded-lg transition-all shadow-lg backdrop-blur-sm border flex items-center gap-2 ${
                     currentView === 'marketplace'
                       ? 'bg-gradient-to-r from-[#8B6914] to-[#D4A574] text-black border-[#D4A574]'
                       : 'bg-black/40 text-[#D4A574]/80 border-[#D4A574]/20 hover:border-[#D4A574]/40'
@@ -536,7 +536,10 @@ export default function App() {
                   Rare Marketplace
                 </button>
               </div>
-              
+            </div>
+
+            {/* Data Source Status Badge - Subtle and elegant */}
+            <div className="mb-4 flex justify-end">
               <button
                 onClick={() => {
                   setUseMockData(!useMockData);
@@ -544,14 +547,15 @@ export default function App() {
                   setFilteredBooks([]);
                   setTimeout(() => fetchBooks(), 100);
                 }}
-                className={`px-4 py-2 rounded-lg transition-all shadow-lg backdrop-blur-sm border ${
+                className={`px-3 py-1.5 rounded-full transition-all backdrop-blur-sm border text-xs ${
                   useMockData
-                    ? 'bg-[#8B6914]/20 text-[#D4A574] border-[#D4A574]/50 hover:bg-[#8B6914]/30'
-                    : 'bg-green-900/20 text-green-400 border-green-400/50 hover:bg-green-900/30'
+                    ? 'bg-[#8B6914]/10 text-[#D4A574]/90 border-[#D4A574]/30 hover:bg-[#8B6914]/20 hover:border-[#D4A574]/50'
+                    : 'bg-green-900/10 text-green-400/90 border-green-400/30 hover:bg-green-900/20 hover:border-green-400/50'
                 }`}
-                style={{ fontFamily: 'serif', fontSize: '0.875rem' }}
+                style={{ fontFamily: 'serif', letterSpacing: '0.02em' }}
+                title="Click to toggle between demo data and backend connection"
               >
-                {useMockData ? '📚 Demo Mode (Mock Data)' : '🔌 Connected to Backend'}
+                {useMockData ? '📚 Demo Mode' : '🔌 Live Backend'}
               </button>
             </div>
 
